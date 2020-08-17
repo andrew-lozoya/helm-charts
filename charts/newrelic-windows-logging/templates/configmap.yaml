@@ -26,12 +26,6 @@ data:
       Mem_Buf_Limit     7MB
       Refresh_Interval  10
 
-    [INPUT]
-      Name              tail
-      Tag               kubelet.err
-      Path              C:\\k\\kubelet.err.log
-      DB                C:\\fluent-bit\\tail_kubelet.db
-
     [FILTER]
       Name                kubernetes
       Match               kube.*

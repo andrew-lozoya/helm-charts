@@ -75,8 +75,6 @@ spec:
           volumeMounts:
             - mountPath: C:\fluent-bit\etc
               name: fluent-bit-config
-            - mountPath: C:\k
-              name: k
             - mountPath: C:\var\log
               name: varlog
             - mountPath: C:\ProgramData
@@ -89,9 +87,6 @@ spec:
         - name: fluent-bit-config
           configMap:
             name: {{ template "newrelic-logging.fluentBitConfig" . }}
-        - name: k
-          hostPath:
-            path: C:\k
         - name: varlog
           hostPath:
             path: C:\var\log
